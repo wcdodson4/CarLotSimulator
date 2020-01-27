@@ -32,25 +32,22 @@ namespace CarLotSimulator
 
             var myCarLot = new CarLot();
             
+
             var myCar = new Car();
             myCar.Year = 2006;
             myCar.Make = "Toyota";
             myCar.Model = "4Runner";
             myCar.EngineNoise = "vroom";
             myCar.HonkNoise = "honk";
-            myCar.isDriveable = true;
+            myCar.IsDriveable = true;
 
             myCarLot.CarList.Add(myCar);
 
-            var yourCar = new Car();
-            yourCar.Year = 2007;
-            yourCar.Make = "Chevrolet";
-            yourCar.Model = "Suburban";
-            yourCar.EngineNoise = "rev";
-            yourCar.HonkNoise = "beep";
-            yourCar.isDriveable = false;
+
+            var yourCar = new Car(2007, "Chevrolet", "Suburban", "rev", "beep", false);
 
             myCarLot.CarList.Add(yourCar);
+
 
             var hisCar = new Car()
             {
@@ -59,10 +56,11 @@ namespace CarLotSimulator
                 Model = "CX 5",
                 EngineNoise = "zoom zoom",
                 HonkNoise = "toot",
-                isDriveable = true
+                IsDriveable = true
             };
 
             myCarLot.CarList.Add(hisCar);
+
 
             myCar.MakeEngineNoise();
             myCar.MakeHonkNoise();
@@ -71,11 +69,12 @@ namespace CarLotSimulator
             hisCar.MakeEngineNoise();
             hisCar.MakeHonkNoise();
 
+
             foreach (Car item in myCarLot.CarList)
             {
-                Console.WriteLine(item.Year);
-                Console.WriteLine(item.Make);
-                Console.WriteLine(item.Model);
+                Console.WriteLine($"Year: {item.Year}");
+                Console.WriteLine($"Make: {item.Make}");
+                Console.WriteLine($"Model: {item.Model}");
             }
         }
     }
