@@ -42,11 +42,13 @@ namespace CarLotSimulator
             myCar.IsDriveable = true;
 
             myCarLot.CarList.Add(myCar);
+            Console.WriteLine(CarLot.numberOfCars);
 
 
             var yourCar = new Car(2007, "Chevrolet", "Suburban", "rev", "beep", false);
 
             myCarLot.CarList.Add(yourCar);
+            Console.WriteLine(CarLot.numberOfCars);
 
 
             var hisCar = new Car()
@@ -60,6 +62,18 @@ namespace CarLotSimulator
             };
 
             myCarLot.CarList.Add(hisCar);
+            Console.WriteLine(CarLot.numberOfCars);
+
+            var herCar = new Car();
+            herCar.Year = 2010;
+            herCar.Make = "BMW";
+            herCar.Model = "i8";
+            herCar.EngineNoise = "hum";
+            herCar.HonkNoise = "screech";
+            herCar.IsDriveable = true;
+
+            myCarLot.CarList.Add(herCar);
+            Console.WriteLine(CarLot.numberOfCars);
 
 
             myCar.MakeEngineNoise();
